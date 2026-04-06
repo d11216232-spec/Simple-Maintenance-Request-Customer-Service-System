@@ -269,7 +269,6 @@
     }
 
     .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
-
   </style>
 </head>
 <body>
@@ -459,7 +458,7 @@
                     </div>
                     <div>
                       <label for="note">新增處理紀錄 <span class="req">*</span></label>
-                      <textarea id="note" placeholder="例如：已回電確認狀況，安排 4/10 到場。" ></textarea>
+                      <textarea id="note" placeholder="例如：已回電確認狀況，安排 4/10 到場。"></textarea>
                       <div class="help">更新狀態時，建議同步新增一則紀錄（方便追蹤）。</div>
                     </div>
                     <div class="form-actions">
@@ -498,7 +497,6 @@
     </dialog>
 
     <input id="filePicker" type="file" accept="application/json" class="sr-only" />
-
   </div>
 
   <script>
@@ -585,7 +583,7 @@
           const dd = String(d.getDate()).padStart(2,'0');
           const hh = String(d.getHours()).padStart(2,'0');
           const mm = String(d.getMinutes()).padStart(2,'0');
-          return \\`${y}-${m}-${dd} ${hh}:${mm}\
+          return `${y}-${m}-${dd} ${hh}:${mm}`;
         }catch(e){
           return String(iso);
         }
@@ -755,7 +753,7 @@
           ['類別', escapeHtml(t.category)],
           ['來源', escapeHtml(t.channel || '-')],
           ['優先級', `<span class="chip">${escapeHtml(t.priority)}</span>`],
-          ['狀態', (()=>{ const sc=statusClass(t.status); return `<span class="chip ${sc.text}"><span class="dot ${sc.dot}></span>${escapeHtml(t.status)}</span>`; })()],
+          ['狀態', (()=>{ const sc=statusClass(t.status); return `<span class="chip ${sc.text}"><span class="dot ${sc.dot}"></span>${escapeHtml(t.status)}</span>`; })()],
           ['主旨', escapeHtml(t.subject)],
           ['描述', `<div style="white-space:pre-wrap; line-height:1.45">${escapeHtml(t.description)}</div>`],
           ['處理人', escapeHtml(t.assignee || '-')],
@@ -1115,7 +1113,6 @@
         selectedId = state.tickets[0].id;
         render();
       }
-
     })();
   </script>
 </body>
